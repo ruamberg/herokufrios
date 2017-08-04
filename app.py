@@ -49,7 +49,7 @@ def login():
             id = username.split('user')[1]
             user = User(id)
             login_user(user)
-            return redirect(request.args.get("next"))
+            return redirect(http://webfrios.herokuapp.com/index)
         else:
             return abort(401)
     else:

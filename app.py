@@ -88,13 +88,7 @@ def register():
 		users_repository.save_user(new_user)
 		return Response("Registered Successfully")
 	else:
-		return Response('''
-        <form action="" method="post">
-            <p><input type=text name=username placeholder="Enter username">
-            <p><input type=password name=password placeholder="Enter password">
-            <p><input type=submit value=Login>
-        </form>
-        ''')
+		return render_template('index.html')
 
 # handle login failed
 @app.errorhandler(401)

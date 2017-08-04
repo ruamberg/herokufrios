@@ -35,8 +35,9 @@ class User(UserMixin):
 users = [User(id) for id in range(1, 21)]
 
 @app.route('/')
+@login_required
 def main():
-    return redirect(url_for('login'))
+    return 'hello' 
 
 
 

@@ -17,10 +17,3 @@ def index():
 @app.route('/index')
 def index():
     return render_template('index.html')
-
-@app.route('/hello')
-def index():
-	return "<h2>Hello World</h2>"
-
-
- 

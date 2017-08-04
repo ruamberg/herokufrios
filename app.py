@@ -6,7 +6,10 @@ from flask import redirect
 felm flask import Response
 from flask import url_for
 
-from flask.ext.login import LoginManager , login_required , UserMixin , login_user
+from flask.ext.login import LoginManager
+from flask.ext.login import login_required
+from flask.ext.login import UserMixin
+from flask.ext.login import login_user
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret_key'

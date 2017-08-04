@@ -37,10 +37,9 @@ users = [User(id) for id in range(1, 21)]
 @app.route('/')
 def main():
     return redirect(url_for('login'))
-    
 
- 
-# somewhere to login
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == 'POST':
@@ -50,8 +49,8 @@ def login():
             id = username.split('user')[1]
             user = User(id)
             login_user(user)
-            retrun 'logged in'
-         else:
+            return redirect(request.args.get("next"))
+        else:
             return abort(401)
     else:
         return Response('''

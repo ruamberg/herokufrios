@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return redirect(http://webfrios.herokuapp.com/login)
+    return 'redirect'
 
 @app.route('/index')
 def index():

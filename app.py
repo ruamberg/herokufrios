@@ -50,8 +50,8 @@ def login():
             id = username.split('user')[1]
             user = User(id)
             login_user(user)
-            return redirect(url_for('index'))
-    else:
+            retrun 'logged in'
+         else:
             return abort(401)
     else:
         return Response('''

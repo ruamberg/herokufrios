@@ -6,7 +6,6 @@ from flask import url_for
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def main():
     return redirect(url_for('login'))
@@ -23,9 +22,5 @@ def index():
 def index():
 	return "<h2>Hello World</h2>"
 
-@app.route('/home')
-@login_required
-def home():
-	return "<h1>User Home</h1>"
 
  

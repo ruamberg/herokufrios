@@ -36,7 +36,7 @@ users = [User(id) for id in range(1, 21)]
 
 @app.route('/')
 @login_required
-def main():
+def index():
     return 'hello' 
 
 
@@ -65,5 +65,30 @@ def login():
 
 
 @app.route('/index')
-def index():
+def main():
     return render_template('index.html')
+    
+    
+    
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return Response('<p>Logged out</p>')
+
+
+# handle login failed
+@app.errorhandler(401)
+def page_not_found(e):
+    return Response('<p>Login failed</p>')
+    
+    
+# callback to reload the user object        
+@login_manager.user_loader
+def load_user(userid):
+    return User(userid)
+    
+
+if __name__ == "__main__":
+    app.run()
+

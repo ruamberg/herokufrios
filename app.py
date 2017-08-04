@@ -1,5 +1,11 @@
 
-from flask import Flask , request , abort , redirect , Response ,url_for
+from flask import Flask
+from flask import request
+from flask import abort
+from flask import redirect
+felm flask import Response
+from flask import url_for
+
 from flask.ext.login import LoginManager , login_required , UserMixin , login_user
 
 app = Flask(__name__)
@@ -46,6 +52,14 @@ class UsersRepository:
 		return self.identifier
 
 users_repository = UsersRepository()
+
+@app.route('/')
+def main():
+    return redirect(url_for('login'))
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 @app.route('/hello')
 def index():
@@ -104,12 +118,5 @@ if __name__ == '__main__':
 	app.run( debug =True)
 
 
-@app.route('/')
-def main():
-    return redirect(url_for('login'))
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
-    
     

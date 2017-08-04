@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask import request
 from flask import redirect
@@ -11,7 +10,7 @@ def main():
     return redirect(url_for('login'))
     
 @app.route('/login')
-def index():
+def login():
     return render_template('login.html')
 
 @app.route('/index')

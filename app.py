@@ -1,11 +1,10 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return 'redirect...'
+    return redirect(http://webfrios.herokuapp.com/login)
 
 @app.route('/index')
 def index():
